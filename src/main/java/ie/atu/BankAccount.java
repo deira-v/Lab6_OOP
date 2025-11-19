@@ -4,7 +4,7 @@ public class BankAccount {
 
     private String accNum;
     private String name;
-    private double balance;
+    private double balance, addDep;
 
     public BankAccount(String accNum, String name, double balance)
     {
@@ -31,4 +31,9 @@ public class BankAccount {
         return balance;
     }
 
+    public double newDeposit(double balance, double addDep) {
+        if(addDep < 0)
+            throw new IllegalArgumentException("Negative balance is not allowed.");
+        return balance + addDep;
+    }
 }

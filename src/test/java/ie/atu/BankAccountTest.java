@@ -11,8 +11,7 @@ public class BankAccountTest {
     BankAccount account;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp(){
         account = new BankAccount();
     }
 
@@ -30,4 +29,14 @@ public class BankAccountTest {
         assertEquals("Negative balance is not allowed.", ex.getMessage());
     }
 
+    @Test
+    public void NewDeposit(){
+        assertEquals(105, account.newDeposit(100, 5));
+    }
+
+    @Test
+    public void NegativeDeposit(){
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> account.newDeposit(100, -5));
+        assertEquals("Negative balance is not allowed.", ex.getMessage());
+    }
 }
