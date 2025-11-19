@@ -17,7 +17,6 @@ public class BankAccount {
     }
 
     public BankAccount() {
-
     }
 
     public Object getAccNum() {
@@ -31,8 +30,5 @@ public class BankAccount {
     public double getBalance() {
         return balance;
     }
-
-
-
 
 }
