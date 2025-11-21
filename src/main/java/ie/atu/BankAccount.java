@@ -32,8 +32,16 @@ public class BankAccount {
     }
 
     public double newDeposit(double balance, double addDep) {
-        if(addDep < 0)
+        if(addDep <= 0)
             throw new IllegalArgumentException("Negative balance is not allowed.");
-        return balance + addDep;
+        else
+            return balance + addDep;
+    }
+
+    public double withdrawal(double balance, double withdraw) {
+        if(withdraw <= 0)
+            throw new IllegalArgumentException("Negative Withdrawal is not allowed.");
+        else
+            return balance - withdraw;
     }
 }

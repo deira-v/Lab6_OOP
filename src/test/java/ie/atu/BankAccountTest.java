@@ -39,4 +39,15 @@ public class BankAccountTest {
         Exception ex = assertThrows(IllegalArgumentException.class, () -> account.newDeposit(100, -5));
         assertEquals("Negative balance is not allowed.", ex.getMessage());
     }
+
+    @Test
+    public void Withdrawal(){
+        assertEquals(95, account.withdrawal(105, 10));
+    }
+
+    @Test
+    public void WithdrawalNegative(){
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> account.withdrawal(95, -5));
+        assertEquals("Negative Withdrawal is not allowed.", ex.getMessage());
+    }
 }
