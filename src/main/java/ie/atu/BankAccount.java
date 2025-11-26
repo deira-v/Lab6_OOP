@@ -33,7 +33,7 @@ public class BankAccount {
 
     public double newDeposit(double balance, double addDep) {
         if(addDep <= 0)
-            throw new IllegalArgumentException("Negative balance is not allowed.");
+            throw new IllegalArgumentException("Negative deposit is not allowed.");
         else
             return balance + addDep;
     }

@@ -37,7 +37,7 @@ public class BankAccountTest {
     @Test
     public void NegativeDeposit(){
         Exception ex = assertThrows(IllegalArgumentException.class, () -> account.newDeposit(100, -5));
-        assertEquals("Negative balance is not allowed.", ex.getMessage());
+        assertEquals("Negative deposit is not allowed.", ex.getMessage());
     }
 
     @Test
