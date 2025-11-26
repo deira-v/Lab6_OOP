@@ -11,7 +11,7 @@ public class BankAccountTest {
     BankAccount account;
 
     @BeforeEach
-    void setUp(){
+    void setUp(){       //create new object
         account = new BankAccount();
     }
 
@@ -24,7 +24,7 @@ public class BankAccountTest {
     }
 
     @Test
-    void constructorNegativeInit(){
+    void constructorNegativeInit(){     //check for negative balance
         Exception ex = assertThrows(IllegalArgumentException.class, () -> new BankAccount("ACC123", "Deira", -100));
         assertEquals("Negative balance is not allowed.", ex.getMessage());
     }
@@ -35,7 +35,7 @@ public class BankAccountTest {
     }
 
     @Test
-    public void NegativeDeposit(){
+    public void NegativeDeposit(){      //check for negative deposit
         Exception ex = assertThrows(IllegalArgumentException.class, () -> account.newDeposit(100, -5));
         assertEquals("Negative deposit is not allowed.", ex.getMessage());
     }
@@ -46,7 +46,7 @@ public class BankAccountTest {
     }
 
     @Test
-    public void WithdrawalNegative(){
+    public void WithdrawalNegative(){       //check for negative withrawal
         Exception ex = assertThrows(IllegalArgumentException.class, () -> account.withdrawal(95, -5));
         assertEquals("Negative Withdrawal is not allowed.", ex.getMessage());
     }

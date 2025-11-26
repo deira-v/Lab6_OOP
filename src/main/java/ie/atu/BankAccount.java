@@ -8,7 +8,7 @@ public class BankAccount {
 
     public BankAccount(String accNum, String name, double balance)
     {
-        if(balance<= 0)
+        if(balance <= 0)
             throw new IllegalArgumentException("Negative balance is not allowed.");
 
         this.accNum = accNum;
@@ -16,7 +16,7 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public BankAccount() {
+    public BankAccount() {      //default constructor
     }
 
     public Object getAccNum() {
